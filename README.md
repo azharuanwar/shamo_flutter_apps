@@ -5,10 +5,11 @@
 <br />
 <p align="center">
   <a href="https://github.com/azharuanwar/">
-    <img src="assets/image_splash.png" alt="Logo" width="80" height="80">
+    <img src="assets/image_splash.png" alt="Logo" width="130" height="150">
   </a>
 
-  <h3 align="center">Job Future - Mobile Flutter</h3>
+  <h3 align="center">Shamo Apps - Mobile Flutter</h3>
+  <h5 align="center">by Azharu Anwar</h5>
 
  
 </p>
@@ -23,8 +24,8 @@
  
 
 </p>
-### Built With
+## Built With
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Shamo Apps - Application Mobile build with Dart and Flutter Framework
 * [Flutter](https://flutter.dev)
 * [Dart](https://dart.dev)
