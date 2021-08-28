@@ -13,7 +13,10 @@ Color backgroundColor4 = Color(0xff252836);
 
 Color primaryTextColor = Color(0xffE1E1E1);
 Color secondaryTextColor = Color(0xff999999);
-Color thirdTextColor = Color(0xff504F5E);
+Color thirdColor = Color(0xff504F5E);
+Color transparantColor = Colors.transparent;
+Color productCardColor = Color(0xffF1F0F2);
+Color blackColor = Color(0xff2E2E2E);
 
 TextStyle primaryTextStyle = GoogleFonts.poppins(
   color: primaryTextColor,
@@ -28,11 +31,15 @@ TextStyle priceTextstyle = GoogleFonts.poppins(
 );
 
 TextStyle thirdTextstyle = GoogleFonts.poppins(
-  color: thirdTextColor,
+  color: thirdColor,
 );
 
 TextStyle purpleTextstyle = GoogleFonts.poppins(
   color: primaryColor,
+);
+
+TextStyle blackTextStyle = GoogleFonts.poppins(
+  color: blackColor,
 );
 
 // Font Weight
