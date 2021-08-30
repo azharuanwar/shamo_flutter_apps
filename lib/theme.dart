@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+//theme color
 Color primaryColor = Color(0xff6C5ECF);
 Color secondaryColor = Color(0xff38ABBE);
 Color alertColor = Color(0xffED6363);
@@ -20,6 +21,7 @@ Color transparantColor = Colors.transparent;
 Color productCardColor = Color(0xffF1F0F2);
 Color blackColor = Color(0xff2E2E2E);
 
+// theme textstyle
 TextStyle primaryTextStyle = GoogleFonts.poppins(
   color: primaryTextColor,
 );
