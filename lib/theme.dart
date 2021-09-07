@@ -46,6 +46,10 @@ TextStyle blackTextStyle = GoogleFonts.poppins(
   color: blackColor,
 );
 
+TextStyle alertTextStyle = GoogleFonts.poppins(
+  color: alertColor,
+);
+
 // Font Weight
 FontWeight light = FontWeight.w300;
 FontWeight reguler = FontWeight.w400;
