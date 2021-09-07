@@ -38,7 +38,7 @@ class CheckoutPage extends StatelessWidget {
                   ),
                 ),
                 CheckoutCart(),
-                CheckoutCart(),
+                // CheckoutCart(),
               ],
             ),
           ),
@@ -222,7 +222,9 @@ class CheckoutPage extends StatelessWidget {
             width: double.infinity,
             margin: EdgeInsets.symmetric(vertical: defaultMargin),
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/success-page');
+              },
               style: TextButton.styleFrom(
                   backgroundColor: primaryColor,
                   shape: RoundedRectangleBorder(
