@@ -33,6 +33,79 @@ class _ProductPageState extends State<ProductPage> {
 
   @override
   Widget build(BuildContext context) {
+    Future<void> showSuccessDialog() async {
+      return showDialog(
+          context: context,
+          builder: (BuildContext context) => Container(
+                width: MediaQuery.of(context).size.width - (2 * defaultMargin),
+                child: AlertDialog(
+                  backgroundColor: backgroundColor3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  content: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: Icon(
+                              Icons.close,
+                              color: primaryColor,
+                            ),
+                          ),
+                        ),
+                        Image.asset(
+                          'assets/icon_success.png',
+                          width: 100,
+                        ),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        Text(
+                          'Hurray :)',
+                          style: primaryTextStyle.copyWith(
+                              fontSize: 18, fontWeight: semiBold),
+                        ),
+                        SizedBox(
+                          height: 12,
+                        ),
+                        Text(
+                          'Item added successfully',
+                          style: thirdTextstyle.copyWith(
+                              fontSize: 14, fontWeight: light),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          width: 154,
+                          height: 44,
+                          child: TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              'View My Cart',
+                              style: primaryTextStyle.copyWith(
+                                  fontSize: 16, fontWeight: medium),
+                            ),
+                            style: TextButton.styleFrom(
+                              backgroundColor: primaryColor,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ));
+    }
+
     Widget indicator(int index) {
       return Container(
         width: currentIndex == index ? 16 : 4,
@@ -174,7 +247,7 @@ class _ProductPageState extends State<ProductPage> {
                           SnackBar(
                             backgroundColor: alertColor,
                             content: Text(
-                              'Has been removed from the Whitelist',
+                              'Has been removed from the Wishlist',
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -283,14 +356,20 @@ class _ProductPageState extends State<ProductPage> {
             // BUTTON
             Container(
               margin: EdgeInsets.all(defaultMargin),
+              width: double.infinity,
               child: Row(
                 children: [
-                  Container(
-                    width: 54,
-                    height: 54,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/button_chat.png'),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/detail-chat');
+                    },
+                    child: Container(
+                      width: 54,
+                      height: 54,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('assets/button_chat.png'),
+                        ),
                       ),
                     ),
                   ),
@@ -301,7 +380,9 @@ class _ProductPageState extends State<ProductPage> {
                     child: Container(
                       height: 54,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          showSuccessDialog();
+                        },
                         child: Text(
                           'Add to Cart',
                           style: primaryTextStyle.copyWith(
