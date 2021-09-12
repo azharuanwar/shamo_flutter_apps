@@ -1,5 +1,5 @@
-import 'package:shamo_apps/models/category_models.dart';
-import 'package:shamo_apps/models/gallery_models.dart';
+import 'category_models.dart';
+import 'gallery_models.dart';
 
 class ProductModel {
   int? id;
@@ -35,7 +35,7 @@ class ProductModel {
     createdAt = DateTime.parse(json['createdAt']);
     updatedAt = DateTime.parse(json['updatedAt']);
     galleries = json['galleries']
-        .map((gallery) => GalleryModel.fromJson(gallery))
+        .map<GalleryModel>((gallery) => GalleryModel.fromJson(gallery))
         .toList();
   }
 
