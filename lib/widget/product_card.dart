@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:shamo_apps/models/product_models.dart';
 import 'package:shamo_apps/theme.dart';
 
-class ProductCard extends StatefulWidget {
-  const ProductCard({Key? key}) : super(key: key);
+class ProductCard extends StatelessWidget {
+  final ProductModel product;
+  ProductCard(this.product);
 
-  @override
-  _ProductCardState createState() => _ProductCardState();
-}
-
-class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -29,8 +26,8 @@ class _ProductCardState extends State<ProductCard> {
             SizedBox(
               height: 30,
             ),
-            Image.asset(
-              'assets/image_sepatu.png',
+            Image.network(
+              product.galleries![0].url!,
               height: 150,
               width: 215,
               fit: BoxFit.cover,

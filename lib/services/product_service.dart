@@ -8,11 +8,13 @@ class ProductService {
   String baseUrl = 'https://shamo-backend.buildwithangga.id/api';
 
   Future<List<ProductModel>> getProducts() async {
-    var url = '$baseUrl/register';
+    // var url = '$baseUrl/products';
 
     var headers = {'Content-Type': 'application/json'};
 
-    var response = await http.get(Uri.parse(url), headers: headers);
+    var response = await http.get(
+        Uri.parse('https://shamo-backend.buildwithangga.id/api/products'),
+        headers: headers);
 
     print(response.body);
 
