@@ -3,8 +3,8 @@ import 'package:shamo_apps/models/product_models.dart';
 import 'package:shamo_apps/theme.dart';
 
 class ProductCard extends StatelessWidget {
-  final ProductModel product;
-  ProductCard(this.product);
+  final ProductModel productz;
+  ProductCard(this.productz);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class ProductCard extends StatelessWidget {
               height: 30,
             ),
             Image.network(
-              product.galleries![0].url!,
+              productz.galleries![1].url!,
               height: 150,
               width: 215,
               fit: BoxFit.cover,
