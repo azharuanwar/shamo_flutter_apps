@@ -22,4 +22,8 @@ class ProductProvider with ChangeNotifier {
       print(e);
     }
   }
+
+  void printConsole() {
+    print(_products);
+  }
 }

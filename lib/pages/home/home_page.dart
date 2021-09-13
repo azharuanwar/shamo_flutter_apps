@@ -1,3 +1,6 @@
+// import 'dart:convert';
+// import 'dart:developer' as developer;
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shamo_apps/models/user_models.dart';
@@ -145,11 +148,13 @@ class HomePage extends StatelessWidget {
             children: [
               SizedBox(
                 width: defaultMargin,
+                height: defaultMargin,
               ),
               Row(
-                children: productProvider.products
-                    .map((product) => ProductCard(product))
-                    .toList(),
+                children: [
+                  ProductCard(),
+                  ProductCard(),
+                ],
               ),
             ],
           ),

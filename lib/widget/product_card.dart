@@ -3,8 +3,8 @@ import 'package:shamo_apps/models/product_models.dart';
 import 'package:shamo_apps/theme.dart';
 
 class ProductCard extends StatelessWidget {
-  final ProductModel productz;
-  ProductCard(this.productz);
+  // final ProductModel productz;
+  // ProductCard(this.productz);
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +15,7 @@ class ProductCard extends StatelessWidget {
       child: Container(
         width: 215,
         height: 278,
-        margin: EdgeInsets.only(
-          right: defaultMargin,
-        ),
+        margin: EdgeInsets.only(right: defaultMargin, bottom: defaultMargin),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20), color: Color(0xffECEDEF)),
         child: Column(
@@ -26,8 +24,8 @@ class ProductCard extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            Image.network(
-              productz.galleries![1].url!,
+            Image.asset(
+              'assets/image_sepatu.png',
               height: 150,
               width: 215,
               fit: BoxFit.cover,
