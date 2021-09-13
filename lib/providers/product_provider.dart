@@ -1,5 +1,3 @@
-// import '';
-
 import 'package:flutter/material.dart';
 import 'package:shamo_apps/models/product_models.dart';
 import 'package:shamo_apps/services/product_service.dart';
@@ -21,9 +19,5 @@ class ProductProvider with ChangeNotifier {
     } catch (e) {
       print(e);
     }
-  }
-
-  void printConsole() {
-    print(_products);
   }
 }

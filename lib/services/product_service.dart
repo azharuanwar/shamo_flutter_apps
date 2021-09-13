@@ -26,7 +26,7 @@ class ProductService {
 
       return products;
     } else {
-      throw Exception('Gagal Get Prorducts');
+      throw Exception('Gagal Get Products');
     }
   }
 }
