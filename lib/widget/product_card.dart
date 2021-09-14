@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shamo_apps/models/product_models.dart';
+// import 'package:shamo_apps/models/product_models.dart';
 import 'package:shamo_apps/theme.dart';
 
 class ProductCard extends StatelessWidget {
-  // final ProductModel productz;
-  // ProductCard(this.productz);
+  final ProductModel product;
+  ProductCard(this.product);
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +25,8 @@ class ProductCard extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            Image.asset(
-              'assets/image_sepatu.png',
+            Image.network(
+              product.galleries![2].url!,
               height: 150,
               width: 215,
               fit: BoxFit.cover,
@@ -36,7 +37,7 @@ class ProductCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Hiking',
+                    product.category!.name!,
                     style: secondaryTextStyle.copyWith(fontSize: 12),
                   ),
                   SizedBox(
@@ -52,7 +53,7 @@ class ProductCard extends StatelessWidget {
                     height: 6,
                   ),
                   Text(
-                    '\$58,67',
+                    '\$${product.price}',
                     style: priceTextstyle.copyWith(
                         fontSize: 14, fontWeight: medium),
                   ),

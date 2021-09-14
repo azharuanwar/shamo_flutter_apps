@@ -12,12 +12,15 @@ import 'package:shamo_apps/pages/splash_page.dart';
 import 'package:shamo_apps/pages/success_page.dart';
 import 'package:shamo_apps/providers/auth_provider.dart';
 import 'package:shamo_apps/providers/product_provider.dart';
+import 'package:shamo_apps/services/product_service.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ProductService().getProducts().then((value) => print("value: $value"));
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(

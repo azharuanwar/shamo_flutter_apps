@@ -16,6 +16,7 @@ class ProductProvider with ChangeNotifier {
     try {
       List<ProductModel> products = await ProductService().getProducts();
       _products = products;
+      print(products);
     } catch (e) {
       print(e);
     }

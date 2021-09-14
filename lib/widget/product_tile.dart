@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:shamo_apps/models/product_models.dart';
 import 'package:shamo_apps/theme.dart';
 
 class ProductTile extends StatelessWidget {
+  final ProductModel product;
+  ProductTile(this.product);
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -15,8 +19,8 @@ class ProductTile extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: Image.asset(
-                'assets/image_sepatu.png',
+              child: Image.network(
+                product.galleries![2].url!,
                 width: 120,
                 height: 120,
                 fit: BoxFit.cover,
@@ -30,14 +34,14 @@ class ProductTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Football',
+                  '${product.category}',
                   style: secondaryTextStyle.copyWith(fontSize: 12),
                 ),
                 SizedBox(
                   height: 6,
                 ),
                 Text(
-                  'Predator 20.3 Firm Ground',
+                  '${product.name}',
                   style: primaryTextStyle.copyWith(
                       fontSize: 16, fontWeight: semiBold),
                 ),
@@ -45,7 +49,7 @@ class ProductTile extends StatelessWidget {
                   height: 6,
                 ),
                 Text(
-                  '\$68,47',
+                  '\$${product.price}',
                   style: priceTextstyle.copyWith(fontWeight: medium),
                 ),
               ],

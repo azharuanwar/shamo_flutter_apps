@@ -10,6 +10,7 @@ import 'package:shamo_apps/providers/product_provider.dart';
 import 'package:shamo_apps/theme.dart';
 import 'package:shamo_apps/widget/product_card.dart';
 import 'package:shamo_apps/widget/product_tile.dart';
+import 'dart:core';
 
 class HomePage extends StatelessWidget {
   @override
@@ -139,8 +140,9 @@ class HomePage extends StatelessWidget {
       );
     }
 
-    Widget popularPorducts() {
+    Widget popularProducts() {
       return Container(
+        // height: 278,
         margin: EdgeInsets.only(top: 14),
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -148,13 +150,11 @@ class HomePage extends StatelessWidget {
             children: [
               SizedBox(
                 width: defaultMargin,
-                height: defaultMargin,
               ),
               Row(
-                children: [
-                  ProductCard(),
-                  ProductCard(),
-                ],
+                children: productProvider.products
+                    .map((product) => ProductCard(product))
+                    .toList(),
               ),
             ],
           ),
@@ -177,11 +177,11 @@ class HomePage extends StatelessWidget {
       return Container(
         margin: EdgeInsets.only(top: 14),
         child: Column(
-          children: [
-            ProductTile(),
-            ProductTile(),
-            ProductTile(),
-          ],
+          children: productProvider.products
+              .map(
+                (product) => ProductTile(product),
+              )
+              .toList(),
         ),
       );
     }
@@ -191,7 +191,7 @@ class HomePage extends StatelessWidget {
         header(),
         categories(),
         popularProductsTitle(),
-        popularPorducts(),
+        popularProducts(),
         newArrivalsTitle(),
         newArrivals()
       ],

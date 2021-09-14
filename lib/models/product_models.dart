@@ -32,8 +32,8 @@ class ProductModel {
     description = json['description'];
     tags = json['tags'];
     category = CategoryModel.fromJson(json['category']);
-    createdAt = DateTime.parse(json['createdAt']);
-    updatedAt = DateTime.parse(json['updatedAt']);
+    createdAt = DateTime.parse(json['created_at']);
+    updatedAt = DateTime.parse(json['updated_at']);
     galleries = json['galleries']
         .map<GalleryModel>((gallery) => GalleryModel.fromJson(gallery))
         .toList();
@@ -48,8 +48,8 @@ class ProductModel {
       'tags': tags,
       'category': category!.toJson(),
       'galleries': galleries!.map((gallery) => gallery.toJson()).toList(),
-      'createdAt': createdAt.toString(),
-      'updatedAt': updatedAt.toString(),
+      'created_at': createdAt.toString(),
+      'updated_at': updatedAt.toString(),
     };
   }
 }
