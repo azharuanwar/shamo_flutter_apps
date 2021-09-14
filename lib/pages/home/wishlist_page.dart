@@ -1,13 +1,11 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shamo_apps/models/product_models.dart';
 import 'package:shamo_apps/providers/wishlist_provider.dart';
 import 'package:shamo_apps/theme.dart';
 import 'package:shamo_apps/widget/wishlist_card.dart';
 
 class WishlistPage extends StatelessWidget {
-  // const HomaPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     WishlistProvider wishlistProvider = Provider.of<WishlistProvider>(context);
@@ -83,7 +81,7 @@ class WishlistPage extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.symmetric(horizontal: defaultMargin),
             children: wishlistProvider.wishlist
-                .map((productWishlist) => WishlistCard())
+                .map((product) => WishlistCard(product),)
                 .toList(),
           ),
         ),

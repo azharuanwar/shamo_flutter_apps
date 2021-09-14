@@ -2,42 +2,21 @@ PODS:
   - Flutter (1.0.0)
   - path_provider (0.0.1):
     - Flutter
-  - Purchases (3.12.3):
-    - PurchasesCoreSwift (= 3.12.3)
-  - purchases_flutter (3.4.5):
-    - Flutter
-    - PurchasesHybridCommon (= 1.9.1)
-  - PurchasesCoreSwift (3.12.3)
-  - PurchasesHybridCommon (1.9.1):
-    - Purchases (= 3.12.3)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
-  - purchases_flutter (from `.symlinks/plugins/purchases_flutter/ios`)
-
-SPEC REPOS:
-  trunk:
-    - Purchases
-    - PurchasesCoreSwift
-    - PurchasesHybridCommon
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
-  purchases_flutter:
-    :path: ".symlinks/plugins/purchases_flutter/ios"
 
 SPEC CHECKSUMS:
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
-  Purchases: e9839517aea4335136f3946ae228eecf5131cc25
-  purchases_flutter: ff55c9a04b918dd20d20030d5b5f5a5859c28cb9
-  PurchasesCoreSwift: dd3fd55a9895abd7906a3842bd36c7f7539a99d1
-  PurchasesHybridCommon: 1d98dd58935a4fa1009c6e17f8b740973147b899
 
-PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+PODFILE CHECKSUM: fe0e1ee7f3d1f7d00b11b474b62dd62134535aea
 
 COCOAPODS: 1.11.2
