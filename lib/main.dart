@@ -6,12 +6,14 @@ import 'package:shamo_apps/pages/checkout_page.dart';
 import 'package:shamo_apps/pages/detail_chat.dart';
 import 'package:shamo_apps/pages/edit_profile.dart';
 import 'package:shamo_apps/pages/home/main_page.dart';
+
 // import 'package:shamo_apps/pages/product_page.dart';
 import 'package:shamo_apps/pages/signin_page.dart';
 import 'package:shamo_apps/pages/signup_page.dart';
 import 'package:shamo_apps/pages/splash_page.dart';
 import 'package:shamo_apps/pages/success_page.dart';
 import 'package:shamo_apps/providers/auth_provider.dart';
+import 'package:shamo_apps/providers/cart_provider.dart';
 import 'package:shamo_apps/providers/product_provider.dart';
 import 'package:shamo_apps/providers/wishlist_provider.dart';
 // import 'package:shamo_apps/services/product_service.dart';
@@ -33,6 +35,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => WishlistProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => CartProvider(),
         ),
       ],
       child: MaterialApp(
