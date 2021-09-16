@@ -1,12 +1,18 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shamo_apps/providers/cart_provider.dart';
 import 'package:shamo_apps/theme.dart';
 import 'package:shamo_apps/widget/checkout_cart.dart';
 
 class CheckoutPage extends StatelessWidget {
-  // const CheckoutPage({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
+    CartProvider cartProvider = Provider.of<CartProvider>(context);
+
     PreferredSize header() {
       return PreferredSize(
         child: AppBar(
@@ -37,8 +43,9 @@ class CheckoutPage extends StatelessWidget {
                     fontWeight: medium,
                   ),
                 ),
-                CheckoutCart(),
-                // CheckoutCart(),
+                Column(
+                  children: cartProvider.carts.map((cart) => CheckoutCart(cart)).toList(),
+                ),
               ],
             ),
           ),
@@ -138,7 +145,7 @@ class CheckoutPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Product Quantity',
+                      '${cartProvider.totalItems()}',
                       style: secondaryTextStyle.copyWith(
                           fontSize: 12, fontWeight: light),
                     ),
@@ -160,7 +167,7 @@ class CheckoutPage extends StatelessWidget {
                           fontSize: 12, fontWeight: light),
                     ),
                     Text(
-                      '\$575.96',
+                      '\$${cartProvider.totalPrice()}',
                       style: primaryTextStyle.copyWith(fontWeight: medium),
                     ),
                   ],
@@ -200,7 +207,7 @@ class CheckoutPage extends StatelessWidget {
                       style: priceTextstyle.copyWith(fontWeight: semiBold),
                     ),
                     Text(
-                      '\$575.92',
+                      '\$${cartProvider.totalPrice()}',
                       style: priceTextstyle.copyWith(fontWeight: semiBold),
                     ),
                   ],

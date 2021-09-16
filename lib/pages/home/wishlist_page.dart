@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shamo_apps/models/product_models.dart';
 import 'package:shamo_apps/providers/wishlist_provider.dart';
 import 'package:shamo_apps/theme.dart';
 import 'package:shamo_apps/widget/wishlist_card.dart';
